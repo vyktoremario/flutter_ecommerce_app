@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-import 'products.dart';
+import 'product.dart';
 
 class Products with ChangeNotifier {
   List<Product> _items = [
@@ -158,17 +157,33 @@ class Products with ChangeNotifier {
         imageUrl: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg"),
   ];
 
+  // var _showFavoritesOnly = false;
   List<Product> get items {
+    // if (_showFavoritesOnly) {
+    //   return _items.where((product) => product.isFavorite).toList();
+    // }
     return [..._items];
   }
 
-Product findById (String id) {
-  return _items.firstWhere((product) => product.id == id);
+List<Product> get favoriteItem {
+  return _items.where((product) => product.isFavorite).toList();
 }
+  Product findById(String id) {
+    return _items.firstWhere((product) => product.id == id);
+  }
 
-void addProduct() {
-  // _items.add(value)
-  notifyListeners();
-}
+  // void showFavoriteOnly() {
+  //   _showFavoritesOnly = true;
+  //   notifyListeners();
+  // }
 
+  // void showAll() {
+  //   _showFavoritesOnly = false;
+  //   notifyListeners();
+  // }
+
+  void addProduct() {
+    // _items.add(value)
+    notifyListeners();
+  }
 }

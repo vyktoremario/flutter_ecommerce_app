@@ -17,10 +17,10 @@ class ProductDetailScreen extends StatelessWidget {
         title: Text(loadedProduct.title),
       ),
       body: ProductItem(
-        loadedProduct.id,
-        loadedProduct.title,
-        loadedProduct.price,
-        loadedProduct.imageUrl,
+        // loadedProduct.id,
+        // loadedProduct.title,
+        // loadedProduct.price,
+        // loadedProduct.imageUrl,
       ),
     );
   }
